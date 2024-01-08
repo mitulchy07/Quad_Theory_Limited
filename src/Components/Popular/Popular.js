@@ -4,15 +4,16 @@ import Item from "../Item/Item";
 
 import "swiper/css";
 import "swiper/css/pagination";
-
-import { Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
+import NewItem from "../NewItem/NewItem";
 
 const Popular = () => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [swiper, setSwiper] = useState(null);
+  const [isOpen, setIsOpen] = useState(true);
+  const openModal = () => setIsOpen(true);
 
   useEffect(() => {
     fetch(
@@ -30,7 +31,11 @@ const Popular = () => {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="text-center m-32">
+        <span className="loading loading-bars loading-lg"></span>
+      </div>
+    );
   }
 
   if (error) {
@@ -45,9 +50,13 @@ const Popular = () => {
         </div>
         <div className="grid justify-items-end">
           <div className="flex justify-end ">
-            <Link to="/newitem" className="text-orange-600 font-bold mt-3">
+            <a
+              href="#my_modal_8"
+              onClick={openModal}
+              className="text-orange-600 font-bold mt-3"
+            >
               AddMore
-            </Link>
+            </a>
             <button
               className="bg-transparent mx-2"
               onClick={() => swiper.slidePrev()}
@@ -91,6 +100,7 @@ const Popular = () => {
           ))}
         </Swiper>
       </div>
+      <NewItem isOpen={isOpen} setIsOpen={setIsOpen}></NewItem>
     </div>
   );
 };

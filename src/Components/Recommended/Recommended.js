@@ -1,36 +1,52 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Item from "../Item/Item";
+import data from "../../data.json";
 
 import "swiper/css";
 import "swiper/css/pagination";
-
-import { Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
+import NewItem from "../NewItem/NewItem";
 
 const Recommended = () => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [swiper, setSwiper] = useState(null);
+  const [isOpen, setIsOpen] = useState(true);
+  const openModal = () => setIsOpen(true);
+
+  //   useEffect(() => {
+  //     fetch(
+  //       "http://www.api.technicaltest.quadtheoryltd.com/api/Item?page=1&pageSize=10"
+  //     )
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         setItems(data.Items);
+  //         setIsLoading(false);
+  //       })
+  //       .catch((err) => {
+  //         setError(err.message);
+  //         setIsLoading(false);
+  //       });
+  //   }, []);
 
   useEffect(() => {
-    fetch(
-      "http://www.api.technicaltest.quadtheoryltd.com/api/Item?page=1&pageSize=10"
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setItems(data.Items);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setIsLoading(false);
-      });
+    try {
+      setItems(data); // Assuming your JSON has Items property
+      setIsLoading(false);
+    } catch (err) {
+      setError(err.message);
+      setIsLoading(false);
+    }
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="text-center m-32">
+        <span className="loading loading-bars loading-lg"></span>
+      </div>
+    );
   }
 
   if (error) {
@@ -46,9 +62,14 @@ const Recommended = () => {
           </div>
           <div className="grid justify-items-end">
             <div className="flex justify-end ">
-              <Link to="/newitem" className="text-orange-600 font-bold mt-3">
+              <a
+                href="#my_modal_8"
+                onClick={openModal}
+                className="text-orange-600 font-bold mt-3"
+              >
                 AddMore
-              </Link>
+              </a>
+
               <button
                 className="bg-transparent mx-2"
                 onClick={() => swiper.slidePrev()}
@@ -93,6 +114,7 @@ const Recommended = () => {
           </Swiper>
         </div>
       </div>
+      <NewItem isOpen={isOpen} setIsOpen={setIsOpen}></NewItem>
     </div>
   );
 };
