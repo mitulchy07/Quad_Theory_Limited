@@ -10,13 +10,27 @@ const Footer = () => {
             className="input input-bordered join-item w-full"
             placeholder="Enter Your Email"
           />
-          <button className="btn join-item border-solid border-4 rounded-xl border-white bg-orange-600">
-            Subscribe
+          <button className="btn join-item border-solid border-4 rounded-xl border-white bg-orange-600 text-white">
+            Subscribe{" "}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+              />
+            </svg>
           </button>
         </div>
         <div className="grid grid-cols-2  mt-12">
-          <div >
-            <h1 className="font-bold text-4xl">pti.</h1>
+          <div>
+            <h1 className="font-bold text-4xl">pti<span className="text-red-600">.</span></h1>
             <h3 className="">Copyright©Tripp. All rights reserved.</h3>
           </div>
 
