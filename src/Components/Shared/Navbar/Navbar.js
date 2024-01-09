@@ -27,19 +27,19 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Menu</a>
+                <a href="#">Menu</a>
                 <ul className="p-2">
                   <li>
-                    <a>Home</a>
+                    <a href="#">Home</a>
                   </li>
                   <li>
-                    <a>Blogs</a>
+                    <a href="#">Blogs</a>
                   </li>
                 </ul>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-4xl">
+          <a href="#" className="btn btn-ghost text-4xl">
             <span>
               pti<span className="text-red-600">.</span>
             </span>
@@ -59,10 +59,10 @@ const Navbar = () => {
                 <summary>Menu</summary>
                 <ul className="p-2">
                   <li>
-                    <a>Profile</a>
+                    <a href="#">Profile</a>
                   </li>
                   <li>
-                    <a>Details</a>
+                    <a href="#">Details</a>
                   </li>
                 </ul>
               </details>
