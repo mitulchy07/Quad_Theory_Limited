@@ -46,7 +46,7 @@ const Popular = () => {
     <div className="mx-10">
       <div className="grid grid-cols-2 md:mt-32">
         <div className="grid justify-items-start">
-          <h1 className="text-3xl m-2">Popular</h1>
+          <h1 className="text-xl md:text-3xl m-2">Popular</h1>
         </div>
         <div className="grid justify-items-end">
           <div className="flex justify-end ">

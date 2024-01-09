@@ -58,7 +58,7 @@ const Recommended = () => {
       <div>
         <div className="grid grid-cols-2 md:mt-32">
           <div className="grid justify-items-start">
-            <h1 className="text-3xl m-2">Recommended</h1>
+            <h1 className="text-xl sm:text-3xl m-2">Recommended</h1>
           </div>
           <div className="grid justify-items-end">
             <div className="flex justify-end ">

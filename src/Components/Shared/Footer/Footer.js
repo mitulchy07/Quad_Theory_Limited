@@ -3,10 +3,11 @@ import image2 from "../../../Images/Image2.png";
 
 const Footer = () => {
   return (
-    <div className="bg-amber-600 ">
-      <div className="container mx-auto grid grid-cols-2 pb-10">
-        <div className="flex flex-col  justify-center ml-32">
-          <div className="join bg-red-100">
+    <div className="bg-amber-600">
+      <div className="grid grid-cols-1 md:grid-cols-2 pb-10">
+        <div className="flex flex-col m-5  justify-center md:ml-32">
+          
+          <div className="join ">
             <input
               className="input input-bordered join-item w-full"
               placeholder="Enter Your Email"
@@ -29,15 +30,15 @@ const Footer = () => {
               </svg>
             </button>
           </div>
-          <div className="grid grid-cols-2  mt-12">
-            <div>
+          <div className="grid grid-cols-1  md:grid-cols-2 mt-12">
+            <div className="text-center md:text-start">
               <h1 className="font-bold text-4xl">
                 pti<span className="text-red-600">.</span>
               </h1>
               <h3 className="">Copyright©Tripp. All rights reserved.</h3>
             </div>
 
-            <div className="flex  gap-2 justify-end items-center">
+            <div className="flex gap-2 justify-center items-center md:justify-end items-center">
               <a>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +75,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div className="hidden md:block"> 
           <img src={image2} className="w-96" />
         </div>
       </div>

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ErrorMessage } from "@hookform/error-message";
+import data from "../../data.json";
 import { useForm } from "react-hook-form";
 import { v4 as uuidv4 } from "uuid";
 
@@ -12,12 +13,32 @@ const NewItem = ({ isOpen, setIsOpen }) => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [submitData, setSubmitData] = useState(null);
+
   const onSubmit = (data) => {
     const Id = uuidv4();
     data = { ...data, Id };
-    console.log(data);
-    // console.log(errors);
+    setSubmitData(data);
   };
+  
+  useEffect(() => {
+    if (submitData) {
+      fetch(data, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submitData),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    }
+  }, [submitData]);
   return (
     <div>
       {isOpen && (
@@ -82,7 +103,7 @@ const NewItem = ({ isOpen, setIsOpen }) => {
                   setValue("IsPopular", e.target.value === "yes")
                 }
               >
-                <option disabled selected>
+                <option value="true" disabled selected>
                   Is it popular?
                 </option>
                 <option value="true">Yes</option>
@@ -98,7 +119,7 @@ const NewItem = ({ isOpen, setIsOpen }) => {
                   setValue("IsRecommended", e.target.value === "yes")
                 }
               >
-                <option disabled selected>
+                <option value="true" disabled selected>
                   Do you recommend this?
                 </option>
                 <option value="true">Yes</option>

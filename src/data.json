@@ -57,7 +57,7 @@
     },
     {
         "Id": "2b1bca6f-f7d6-4854-86dd-126db70776a2",
-        "Name": "Cappuchino",
+        "Name": "Coffee",
         "Price": 3.00,
         "ImageUrl": "http://www.api.technicaltest.quadtheoryltd.com/Resources/Image\\Cappuchino.jpg",
         "IsPopular": true,

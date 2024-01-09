@@ -3,8 +3,8 @@ import image from "../../Images/Image1.png";
 
 const Banner = () => {
   return (
-    <div className="grid grid-cols-2 bg-amber-600 rounded-[30px] mx-10 md:mt-32">
-      <div className="grid justify-items-end text-white">
+    <div className="grid grid-cols-1 bg-amber-600 rounded-[30px] mx-10 md:mt-32 md:grid-cols-2">
+      <div className="grid justify-items-end text-white m-2">
         <div>
           <h1 className=" md:mt-9 font-bold text-6xl md:mb-5">
             Deliver Food To Your <br /> Door Step.
