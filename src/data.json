@@ -50,7 +50,7 @@
     {
         "Id": "f6fdc153-052a-4eab-8b7d-bb1478d2179c",
         "Name": "Pasta",
-        "Price": 5.00,
+        "Price": 6.00,
         "ImageUrl": "http://www.api.technicaltest.quadtheoryltd.com/Resources/Image\\Pasta.jpg",
         "IsPopular": true,
         "IsRecommended": true
