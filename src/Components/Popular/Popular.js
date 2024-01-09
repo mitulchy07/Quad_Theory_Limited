@@ -4,7 +4,6 @@ import Item from "../Item/Item";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import { Link } from "react-router-dom";
 import NewItem from "../NewItem/NewItem";
 
 const Popular = () => {
@@ -17,7 +16,7 @@ const Popular = () => {
 
   useEffect(() => {
     fetch(
-      "http://www.api.technicaltest.quadtheoryltd.com/api/Item?page=1&pageSize=10"
+     "http://www.api.technicaltest.quadtheoryltd.com/api/Item?page=1&pageSize=10"
     )
       .then((res) => res.json())
       .then((data) => {
@@ -39,7 +38,12 @@ const Popular = () => {
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return (
+      <div className="text-center m-32">
+        <h1 className="text-2xl text-red-600">Error: {error}</h1>
+        <span className="loading loading-bars loading-lg"></span>
+      </div>
+    );
   }
 
   return (

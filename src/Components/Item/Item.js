@@ -5,9 +5,9 @@ const Item = ({ item }) => {
     <div>
       <div className="h-64 overflow-hidden">
         <img
-          src={item.ImageUrl}
+          src={item?.ImageUrl ? item.ImageUrl : "Error Loading"}
           className="rounded-xl w-full h-full object-cover"
-          alt=""
+          alt="Food"
         />
       </div>
       <div className="text-center">

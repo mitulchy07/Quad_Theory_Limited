@@ -18,26 +18,28 @@ const NewItem = ({ isOpen, setIsOpen }) => {
     const Id = uuidv4();
     data = { ...data, Id };
     setSubmitData(data);
+    console.log(data);
+    closeModal();
   };
   
-  useEffect(() => {
-    if (submitData) {
-      fetch(data, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(submitData),
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-    }
-  }, [submitData]);
+  // useEffect(() => {
+  //   if (submitData) {
+  //     fetch("https://pti-server-two.vercel.app/add-product", {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(submitData),
+  //     })
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       console.log('Success:', data);
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error:', error);
+  //     });
+  //   }
+  // }, [submitData]);
   return (
     <div>
       {isOpen && (

@@ -5,7 +5,6 @@ import data from "../../data.json";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import { Link } from "react-router-dom";
 import NewItem from "../NewItem/NewItem";
 
 const Recommended = () => {
@@ -33,7 +32,7 @@ const Recommended = () => {
 
   useEffect(() => {
     try {
-      setItems(data); // Assuming your JSON has Items property
+      setItems(data);
       setIsLoading(false);
     } catch (err) {
       setError(err.message);

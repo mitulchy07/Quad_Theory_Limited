@@ -13,7 +13,7 @@ const Banner = () => {
         </div>
       </div>
       <div className=" grid justify-items-start">
-        <img src={image} className="bg-transparent align-bottom " />
+        <img src={image} className="bg-transparent align-bottom " alt="food"/>
       </div>
     </div>
   );
