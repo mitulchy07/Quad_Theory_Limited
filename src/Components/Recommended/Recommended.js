@@ -54,7 +54,7 @@ const Recommended = () => {
   }
 
   return (
-    <div className="md:mb-56">
+    <div className="mx-10 md:mb-56">
       <div>
         <div className="grid grid-cols-2 md:mt-32">
           <div className="grid justify-items-start">

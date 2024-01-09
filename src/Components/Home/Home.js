@@ -6,7 +6,7 @@ import Footer from "../Shared/Footer/Footer";
 const Home = () => {
   return (
     <div>
-      <div className="container mx-auto">
+      <div className="lg:container mx-auto">
         <Navbar> </Navbar>
         <Outlet></Outlet>
       </div>

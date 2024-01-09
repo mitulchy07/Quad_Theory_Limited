@@ -26,18 +26,20 @@ const NewItem = ({ isOpen, setIsOpen }) => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
                 type="text"
+                className="input input-bordered w-full mb-2"
                 placeholder="What item do you want to add?"
                 {...register("Name", {
                   required: true,
-                  minLength: 5,
+                  minLength: 2,
                   maxLength: 20,
                 })}
               />
               {errors.Name?.type === "required" && (
-                <p role="alert">Name is required</p>
+                <p className="text-red-600 mb-2" role="alert">Name is required</p>
               )}
               <input
                 type="number"
+                className="input input-bordered w-full mb-2"
                 step="0.01"
                 min="0"
                 placeholder="How much does it cost?"
@@ -47,13 +49,14 @@ const NewItem = ({ isOpen, setIsOpen }) => {
                 })}
               />
               {errors.Price?.type === "required" && (
-                <p role="alert">Price is required</p>
+                <p className="text-red-600 mb-2"  role="alert">Price is required</p>
               )}
               {errors.Price?.type === "pattern" && (
-                <p role="alert">Please enter a valid price</p>
+                <p className="text-red-600 mb-2" role="alert">Please enter a valid price</p>
               )}
               <input
                 type="url"
+                className="input input-bordered w-full mb-2"
                 placeholder="Please enter an image URL"
                 defaultValue="http://"
                 {...register("ImageUrl", {
@@ -64,13 +67,14 @@ const NewItem = ({ isOpen, setIsOpen }) => {
                 autoFocus
               />
               {errors.ImageUrl?.type === "required" && (
-                <p role="alert">Image URL is required</p>
+                <p className="text-red-600 mb-2" role="alert">Image URL is required</p>
               )}
               {errors.ImageUrl?.type === "pattern" && (
-                <p role="alert">Please enter a valid image URL</p>
+                <p className="text-red-600 mb-2" role="alert">Please enter a valid image URL</p>
               )}
 
               <select
+              className="input input-bordered w-full mb-2"
                 {...register("IsPopular", {
                   required: true,
                 })}
@@ -86,6 +90,7 @@ const NewItem = ({ isOpen, setIsOpen }) => {
               </select>
 
               <select
+              className="input input-bordered w-full mb-2"
                 {...register("IsRecommended", {
                   required: true,
                 })}
@@ -100,14 +105,13 @@ const NewItem = ({ isOpen, setIsOpen }) => {
                 <option value="false">No</option>
               </select>
 
-              <input type="submit" />
-            </form>
-            <div className="modal-action">
-              <button className="btn btn-ghost">Submit</button>
+              <div className="modal-action">
+              <button type="submit" className="btn btn-ghost">Submit</button>
               <button onClick={closeModal} className="btn">
                 Close
               </button>
             </div>
+            </form>
           </div>
         </div>
       )}

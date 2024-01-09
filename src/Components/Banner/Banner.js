@@ -3,7 +3,7 @@ import image from "../../Images/Image1.png";
 
 const Banner = () => {
   return (
-    <div className="grid grid-cols-2 bg-amber-600 rounded-[30px] md:mt-32">
+    <div className="grid grid-cols-2 bg-amber-600 rounded-[30px] mx-10 md:mt-32">
       <div className="grid justify-items-end text-white">
         <div>
           <h1 className=" md:mt-9 font-bold text-6xl md:mb-5">
